@@ -21,6 +21,9 @@ Pyramids Categories
 
 *Pre-compiled category files for the Pyramids Parser.*
 
+See 'Pyramids <https://github.com/hosford42/pyramids>`__ for the Pyramids
+Parser itself.
+
 """.strip()
 
 

@@ -22,10 +22,10 @@ DEALINGS IN THE SOFTWARE.
 
 
 
-Pyramids Categories is derived in part from Kevin Atkinson's wordlist
-project, which is available from https://github.com/kevina/wordlist. The
-files are therefore governed by additional copyright and licensing
-requirements, reproduced here:
+Pyramids Categories is derived in part from Kevin Atkinson's wordlist,
+which is available from https://github.com/kevina/wordlist. The files are
+therefore governed by additional copyright and licensing requirements,
+reproduced in full here:
 
 
 The collective work is Copyright 2000-2015 by Kevin Atkinson as well
