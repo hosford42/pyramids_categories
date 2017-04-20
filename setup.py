@@ -70,5 +70,6 @@ setup(
 
     keywords='pyramids parser categories category files',
     packages=['pyramids_categories'],
-    include_package_data=True
+    include_package_data=True,
+    zip_safe=False
 )
