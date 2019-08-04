@@ -8,7 +8,7 @@ This package provides the English grammar configuration for the
 Code:
 ```python
 import time
-from pyramids import get_parse_graphs
+from pyramids.graphs import get_parse_graphs
 from pyramids.categorization import Category
 from pyramids_english import ENGLISH
 
