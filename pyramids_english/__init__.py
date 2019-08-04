@@ -15,6 +15,7 @@ __version__ = '1.0.0'
 __all__ = [
     '__author__',
     '__version__',
+    'ENGLISH',
 ]
 
 # TODO: Someday, add code to automatically generate the .ctg files from
