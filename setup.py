@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Setup script for Pyramids Categories."""
+"""Setup script for Pyramids: English."""
 
 from setuptools import setup
 from codecs import open
@@ -16,10 +16,10 @@ here = path.abspath(path.dirname(__file__))
 # Default long description
 long_description = """
 
-Pyramids Categories
-===================
+Pyramids: English
+=================
 
-*Pre-compiled category files for the Pyramids Parser.*
+*English language grammar for the Pyramids Parser.*
 
 See 'Pyramids <https://github.com/hosford42/pyramids>`__ for the Pyramids
 Parser itself.
@@ -30,9 +30,7 @@ Parser itself.
 # Get the long description from the relevant file. First try README.rst,
 # then fall back on the default string defined here in this file.
 if path.isfile(path.join(here, 'README.rst')):
-    with open(path.join(here, 'README.rst'),
-              encoding='utf-8',
-              mode='rU') as description_file:
+    with open(path.join(here, 'README.rst'), encoding='utf-8', mode='rU') as description_file:
         long_description = description_file.read()
 
 
@@ -46,8 +44,7 @@ setup(
     url='https://github.com/hosford42/pyramids_categories',
     license='MIT',
     platforms=['any'],
-    description='Pyramids Categories: '
-                'Pre-compiled category files for the Pyramids Parser',
+    description='Pyramids: English -- Pyramids Parser grammar for the English language',
     long_description=long_description,
 
     # See https://pypi.python.org/pypi?:action=list_classifiers
@@ -61,15 +58,14 @@ setup(
         # ensure that you indicate whether you support Python 2, Python 3
         # or both.
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
 
-    keywords='pyramids parser categories category files',
+    keywords='pyramids parser English grammar semantic natural language',
     packages=['pyramids_english'],
     include_package_data=True,
+    install_requires=['pyramids>=0.1', 'sortedcontainers'],
     zip_safe=False
 )
