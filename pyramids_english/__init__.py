@@ -8,7 +8,7 @@ English language grammar for the Pyramids Parser.
 """
 import os
 
-from pyramids.model_loader import ModelLoader
+from pyramids.loader import ModelLoader
 from pyramids.repl import repl
 
 __author__ = 'Aaron Hosford'
