@@ -17,7 +17,8 @@ import build_readme
 #       module/package that is being packaged for PyPI. Figure out a way
 #       to genericize it. One possibility: Use setup.py to tell this module
 #       what module/package is being processed.
-from pyramids_categories import __version__, __file__ as module_path
+# noinspection PyProtectedMember
+from pyramids_english import __version__, __file__ as module_path
 
 
 # Extract module name from path.
@@ -37,8 +38,7 @@ if os.path.isdir('.\\doc'):
     os.chdir('.\\doc')
     try:
         for notebook_path in glob.glob('*.ipynb'):
-            os.system('ipython nbconvert "' +
-                      os.path.basename(notebook_path) + '"')
+            os.system('ipython nbconvert "' + os.path.basename(notebook_path) + '"')
     finally:
         os.chdir('..')
 

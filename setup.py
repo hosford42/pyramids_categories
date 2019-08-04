@@ -7,7 +7,7 @@ from setuptools import setup
 from codecs import open
 from os import path
 
-from pyramids_categories import __author__, __version__
+from pyramids_english import __author__, __version__
 
 
 here = path.abspath(path.dirname(__file__))
@@ -39,7 +39,7 @@ if path.isfile(path.join(here, 'README.rst')):
 # See https://pythonhosted.org/setuptools/setuptools.html for a full list
 # of parameters and their meanings.
 setup(
-    name='pyramids_categories',
+    name='pyramids_english',
     version=__version__,
     author=__author__,
     author_email='hosford42@gmail.com',
@@ -69,7 +69,7 @@ setup(
     ],
 
     keywords='pyramids parser categories category files',
-    packages=['pyramids_categories'],
+    packages=['pyramids_english'],
     include_package_data=True,
     zip_safe=False
 )
