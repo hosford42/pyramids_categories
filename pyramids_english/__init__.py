@@ -9,6 +9,7 @@ English language grammar for the Pyramids Parser.
 import os
 
 from pyramids.loader import ModelLoader
+from pyramids.parsing import Parser
 from pyramids.repl import repl
 
 __author__ = 'Aaron Hosford'
@@ -17,6 +18,7 @@ __all__ = [
     '__author__',
     '__version__',
     'load_model',
+    'get_parser',
     'main',
 ]
 
@@ -31,6 +33,12 @@ def get_model_loader(verbose=False):
 def load_model(verbose=False):
     model_loader = get_model_loader(verbose)
     return model_loader.load_model()
+
+
+def get_parser(model=None):
+    if model is None:
+        model = load_model()
+    return Parser(model)
 
 
 def main():
