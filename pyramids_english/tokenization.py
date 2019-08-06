@@ -1,3 +1,4 @@
+from pyramids.config import ModelConfig
 from pyramids.tokenization import Tokenizer
 
 __all__ = [
@@ -6,6 +7,10 @@ __all__ = [
 
 
 class EnglishTokenizer(Tokenizer):
+
+    @classmethod
+    def from_config(cls, config_info: ModelConfig) -> 'EnglishTokenizer':
+        return cls(discard_spaces=config_info.discard_spaces)
 
     def __init__(self, discard_spaces=True):
         self._discard_spaces = bool(discard_spaces)

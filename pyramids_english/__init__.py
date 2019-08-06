@@ -34,9 +34,7 @@ def get_model_loader(path=None, verbose=False):
 
 def load_model(path=None, verbose=False):
     model_loader = get_model_loader(path, verbose)
-    discard_spaces = model_loader.model_config_info.discard_spaces
-    tokenizer = EnglishTokenizer(discard_spaces)
-    return model_loader.load_model(tokenizer)
+    return model_loader.load_model()
 
 
 def get_parser(model=None):
@@ -51,6 +49,4 @@ def tokenize(text: str, discard_spaces: bool = True):
 
 def main():
     model_loader = get_model_loader()
-    discard_spaces = model_loader.model_config_info.discard_spaces
-    tokenizer = EnglishTokenizer(discard_spaces)
-    repl(model_loader, tokenizer)
+    repl(model_loader)

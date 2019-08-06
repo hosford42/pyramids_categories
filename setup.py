@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """Setup script for Pyramids: English."""
@@ -66,6 +66,9 @@ setup(
     keywords='pyramids parser English grammar semantic natural language',
     packages=['pyramids_english'],
     include_package_data=True,
-    install_requires=['pyramids>=0.1', 'sortedcontainers'],
-    zip_safe=False
+    install_requires=['pyramids>=1.0', 'sortedcontainers'],
+    zip_safe=False,
+    entry_points={
+        'pyramids.tokenizers': ['english = pyramids_english.tokenization:EnglishTokenizer']
+    }
 )
