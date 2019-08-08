@@ -20,6 +20,8 @@ __all__ = [
     '__version__',
     'load_model',
     'get_parser',
+    'tokenize',
+    'parse',
     'main',
 ]
 
@@ -45,6 +47,16 @@ def get_parser(model=None):
 
 def tokenize(text: str, discard_spaces: bool = True):
     return EnglishTokenizer(discard_spaces).tokenize(text)
+
+
+_parser = None
+
+
+def parse(text: str, category=None, fast=False, timeout=None, fresh=True):
+    global _parser
+    if _parser is None:
+        _parser = get_parser()
+    return _parser.parse(text, category, fast, timeout, fresh)
 
 
 def main():
