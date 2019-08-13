@@ -513,6 +513,7 @@ sentence(and,-or,-nor,-but,-not,-either,-neither):
     [compound(delimited)]
     +sentence(complete,-terminated) <CASE *conjunction(and) CASE> sentence(complete,-delimited,-terminated)
 
+# TODO: For some reason this isn't working.
 sentence(but,-and,-or,-nor,-not,-either,-neither):
     [one_term(not,single)]
     delimited[last_term(delimited)]

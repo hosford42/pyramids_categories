@@ -303,7 +303,7 @@ quoted_literal(single_quoted):
 # TODO: Add conjunctions for other categories?
 # TODO: Figure out a way to eliminate the redundancies here.
 
-# TODO: Conjunctive phrases containing other conjunctive phrases end up marked with the 
+# TODO: Conjunctive phrases containing other conjunctive phrases end up marked with the
 #       conjunctions of the contained conjunctive phrases as well as their own.
 #       For example, "you and him or her" will end up with the top level node
 #       marked as both "and" and "or" regardless of how it is parsed. We need the
@@ -832,7 +832,7 @@ noun_phrase(has_restriction,insubordinable,-delimited):
 noun_phrase(finished_noun_phrase): noun_phrase(arguments_complete,-finished_noun_phrase)
 
 noun_phrase(finished_noun_phrase,has_quality,described,-delimited): *noun_phrase(finished_noun_phrase,delimited) QUALITY> quality(-delimited)
-noun_phrase(finished_noun_phrase,has_quality,described,-delimited): *noun_phrase(finished_noun_phrase,delimited) QUALITY> object(-described,-simple,-compound,-delimited)
+noun_phrase(finished_noun_phrase,has_quality,described,-delimited): *noun_phrase(finished_noun_phrase,delimited) QUALIFIER> object(-described,-simple,-compound,-delimited)
 
 
 # ------------------------------- OWNERSHIP DETERMINERS -----------------------

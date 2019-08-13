@@ -52,11 +52,11 @@ def tokenize(text: str, discard_spaces: bool = True):
 _parser = None
 
 
-def parse(text: str, category=None, fast=False, timeout=None, fresh=True):
+def parse(text: str, category=None, fast=False, timeout=None, fresh=True, emergency=False):
     global _parser
     if _parser is None:
         _parser = get_parser()
-    return _parser.parse(text, category, fast, timeout, fresh)
+    return _parser.parse(text, category, fast, timeout, fresh, emergency)
 
 
 def main():
