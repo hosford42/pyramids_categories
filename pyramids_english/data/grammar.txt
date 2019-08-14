@@ -1,9 +1,9 @@
 # =============================================================================
-# File:    grammar.txt
+# File:    grammar.pgrm
 # Author:  Aaron Hosford
 # Created: 7/18/2011
 #
-# Copyright (c) Aaron Hosford 2011
+# Copyright (c) Aaron Hosford 2011-2019
 # =============================================================================
 #
 # Description:
