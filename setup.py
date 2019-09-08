@@ -44,7 +44,7 @@ setup(
     url='https://github.com/hosford42/pyramids_categories',
     license='MIT',
     platforms=['any'],
-    description='Pyramids: English -- Pyramids Parser grammar for the English language',
+    description='Pyramids: English -- Pyramids parser model for the English language',
     long_description=long_description,
 
     # See https://pypi.python.org/pypi?:action=list_classifiers
@@ -54,21 +54,18 @@ setup(
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'License :: OSI Approved :: MIT License',
 
-        # Specify the Python versions you support here. In particular,
-        # ensure that you indicate whether you support Python 2, Python 3
-        # or both.
+        # Supported Python version(s)
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
     ],
 
-    keywords='pyramids parser English grammar semantic natural language',
+    keywords='pyramids parser model tokenizer English grammar semantic natural language',
     packages=['pyramids_english'],
     include_package_data=True,
     install_requires=['pyramids>=1.0', 'sortedcontainers'],
     zip_safe=False,
     entry_points={
-        'pyramids.tokenizers': ['english = pyramids_english.tokenization:EnglishTokenizer']
+        'pyramids.plugins': ['Pyramids English = pyramids_english.plugin:PLUGIN'],
     }
 )
