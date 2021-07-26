@@ -1,5 +1,5 @@
 # =============================================================================
-# File:    grammar.pgrm
+# File:    grammar.txt
 # Author:  Aaron Hosford
 # Created: 7/18/2011
 #

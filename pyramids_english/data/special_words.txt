@@ -182,20 +182,20 @@ pronoun(impersonal,third,singular,place,negative): nowhere nowheres
 
 pronoun(assertive): there
 
-pronoun(personal,third,singular,plural,subject,question,restriction): who
-pronoun(personal,third,singular,plural,non_subject,question,restriction): who whom
-pronoun(personal,impersonal,third,singular,plural,subject,object,target,agent,question): whose
-pronoun(impersonal,third,mass,subject,object,target,agent,question): whose
-pronoun(impersonal,third,singular,subject,non_subject,question): what which
-pronoun(impersonal,third,singular,subject,non_subject,restriction): which
+pronoun(personal,third,singular,plural,subject,question,restriction): who whoever whosoever
+pronoun(personal,third,singular,plural,non_subject,question,restriction): who whom whoever whomever whosoever
+pronoun(personal,impersonal,third,singular,plural,subject,object,target,agent,question): whose whosever
+pronoun(impersonal,third,mass,subject,object,target,agent,question): whose whoever
+pronoun(impersonal,third,singular,subject,non_subject,question): what which whatever whichever
+pronoun(impersonal,third,singular,subject,non_subject,restriction): which whichever
 pronoun(impersonal,third,singular,subject,restriction,that_subject): that # This is special because we don't allow 'that' to be the subject of a restriction
 pronoun(impersonal,third,singular,object,target,agent,restriction): that so  # so acts as a placeholder for a clause, as in "I told you so"
-pronoun(impersonal,time,question,restriction): when
-pronoun(impersonal,place,question,restriction): where
-pronoun(impersonal,possession,question,restriction): whose
-pronoun(impersonal,causal,cause,question,restriction): why
-pronoun(impersonal,causal,effect,question,restriction): what
-pronoun(impersonal,style,question): how
+pronoun(impersonal,time,question,restriction): when whenever
+pronoun(impersonal,place,question,restriction): where wherever
+pronoun(impersonal,possession,question,restriction): whose whosever
+pronoun(impersonal,causal,cause,question,restriction): why whyever
+pronoun(impersonal,causal,effect,question,restriction): what whatever
+pronoun(impersonal,style,question): how however
 pronoun(impersonal,degree,question): how
 pronoun(impersonal,truth,question): whether if
 
