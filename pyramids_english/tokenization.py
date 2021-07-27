@@ -1,6 +1,12 @@
-from pyramids.config import ModelConfig
-from pyramids.language import Language
+from typing import TYPE_CHECKING
+
 from pyramids.tokenization import Tokenizer
+
+if TYPE_CHECKING:
+    from pyramids.language import Language
+    from pyramids.config import ModelConfig
+    from pyramids.tokenization import TokenSequence
+
 
 __all__ = [
     'EnglishTokenizer',
@@ -11,9 +17,10 @@ class EnglishTokenizer(Tokenizer):
 
     @classmethod
     def from_config(cls, config_info: ModelConfig) -> 'EnglishTokenizer':
-        return cls(discard_spaces=config_info.discard_spaces, language=config_info.tokenizer_language)
+        return cls(discard_spaces=config_info.discard_spaces,
+                   language=config_info.tokenizer_language)
 
-    def __init__(self, discard_spaces=True, language: Language = None):
+    def __init__(self, discard_spaces: bool = True, language: Language = None):
         self._discard_spaces = bool(discard_spaces)
         self._language = language or Language('English', 'en', 'eng')
         self.contractions = ("'", "'m", "'re", "'s", "'ve", "'d", "'ll")
@@ -23,21 +30,22 @@ class EnglishTokenizer(Tokenizer):
         return self._language
 
     @property
-    def discard_spaces(self):
+    def discard_spaces(self) -> bool:
         return self._discard_spaces
 
     @staticmethod
-    def is_word_char(char):
+    def is_word_char(char) -> bool:
         return char.isalnum() or char == "'"
 
-    def tokenize(self, text):
+    def tokenize(self, text: str) -> TokenSequence:
         last_char = ''
         start = 0
         end = 0
         non_space = False
 
         for index, char in enumerate(text):
-            if start != end and last_char != char and not (self.is_word_char(last_char) and self.is_word_char(char)):
+            if start != end and last_char != char and not (self.is_word_char(last_char) and
+                                                           self.is_word_char(char)):
                 if not self.discard_spaces or non_space:
                     token = text[start:end]
                     if token.endswith(self.contractions):
