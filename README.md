@@ -8,15 +8,14 @@ This package provides the English grammar configuration for the
 Code:
 ```python
 import time
-from pyramids.graphs import get_parse_graphs
 from pyramids.categorization import Category
-from pyramids_english import ENGLISH
+from pyramids_english.plugin import LANGUAGE
 
 timeout = 5  # maximum time, in seconds
 text = "This is a test."
 
 (forests, emergency_disambiguation, parse_timed_out, disambiguation_timed_out) = \
-        ENGLISH.parse(text, timeout=time.time() + timeout)
+        LANGUAGE.parse(text, timeout=time.time() + timeout)
 
 for index, forest in enumerate(forests):
     forest = forest.restrict(Category('sentence'))
@@ -26,7 +25,7 @@ for index, forest in enumerate(forests):
     if forest.is_ambiguous():
         forest = forest.disambiguate()
     print("Interpretation #%s" % (index + 1))
-    for graph in get_parse_graphs(forest):
+    for graph in forest.get_parse_graphs(forest):
         print(graph)
         print()
     print()

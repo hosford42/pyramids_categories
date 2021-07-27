@@ -2,7 +2,7 @@
 
 import cProfile
 
-from pyramids_english import parse
+from pyramids_english.convenience import parse
 
 # Prime the parser before we profile it.
 parse("hi")
