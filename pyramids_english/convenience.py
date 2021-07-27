@@ -20,10 +20,10 @@ __all__ = [
 PARSER = Parser(MODEL_LOADER.load_model())
 
 
-def tokenize(text: str) -> TokenSequence:
+def tokenize(text: str) -> 'TokenSequence':
     return PARSER.model.tokenizer.tokenize(text)
 
 
-def parse(text: str, category: Union[Category, str] = None, fast: bool = False,
-          timeout: float = None, fresh: bool = True, emergency: bool = False) -> ParseResult:
+def parse(text: str, category: 'Union[Category, str]' = None, fast: bool = False,
+          timeout: float = None, fresh: bool = True, emergency: bool = False) -> 'ParseResult':
     return PARSER.parse(text, category, fast, timeout, fresh, emergency)

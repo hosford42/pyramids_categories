@@ -16,17 +16,17 @@ __all__ = [
 class EnglishTokenizer(Tokenizer):
 
     @classmethod
-    def from_config(cls, config_info: ModelConfig) -> 'EnglishTokenizer':
+    def from_config(cls, config_info: 'ModelConfig') -> 'EnglishTokenizer':
         return cls(discard_spaces=config_info.discard_spaces,
                    language=config_info.tokenizer_language)
 
-    def __init__(self, discard_spaces: bool = True, language: Language = None):
+    def __init__(self, discard_spaces: bool = True, language: 'Language' = None):
         self._discard_spaces = bool(discard_spaces)
         self._language = language or Language('English', 'en', 'eng')
         self.contractions = ("'", "'m", "'re", "'s", "'ve", "'d", "'ll")
 
     @property
-    def language(self) -> Language:
+    def language(self) -> 'Language':
         return self._language
 
     @property
@@ -37,7 +37,7 @@ class EnglishTokenizer(Tokenizer):
     def is_word_char(char) -> bool:
         return char.isalnum() or char == "'"
 
-    def tokenize(self, text: str) -> TokenSequence:
+    def tokenize(self, text: str) -> 'TokenSequence':
         last_char = ''
         start = 0
         end = 0
